@@ -1,0 +1,3 @@
+This content is very interesting to read.
+
+If you see it in your console, then you succesfully completed lab #2.
