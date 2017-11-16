@@ -17,13 +17,13 @@
     "price": 11,
     "year": 2015,
     "state": "NJ",
-    "description": "Amet sint incididunt ullamco dolor reprehenderit laborum dolor nostrud nulla irure. In eiusmod sunt consequat aliqua ea voluptate voluptate aliquip velit dolor eu sit nulla excepteur. Et ullamco Lorem do elit amet laboris minim cupidatat voluptate. Irure eiusmod eu ullamco veniam culpa minim. Velit cupidatat dolore ullamco mollit nulla eiusmod. Pariatur labore enim voluptate incididunt ea aliquip cupidatat. Ad anim eiusmod irure sit tempor sit quis eu nostrud ut.\r\n"
+    "description": "A beautiful license plate from the Garden State. Year is 2015. \r\n"
   },
   {
     "_id": "5a0c8ab27aecc7e77f4d73f0",
     "onSale": false,
     "picture": "http://angulartraining.com/plates/CA.png",
-    "title": "201 California My Tahoe license plate",
+    "title": "2013 California My Tahoe license plate",
     "price": 9,
     "year": 2013,
     "state": "CA",
