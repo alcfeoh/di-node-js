@@ -16,7 +16,7 @@ server.listen(port, (err) => {
 });
 
 function outputFile(response) {
-    fs.readFile('data/persons.json', 'utf8', function(err, contents) {
+    fs.readFile('data/plates.json', 'utf8', function(err, contents) {
         response.end(contents);
     });
 }

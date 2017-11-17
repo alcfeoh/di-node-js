@@ -6,7 +6,7 @@ app.get('/hello', (request, response) => {
     response.send('<h1>Hello Express Server!</h1>')
 });
 
-app.use('/data', express.static('data', {index: 'persons.json'}));
+app.use('/data', express.static('data', {index: 'plates.json'}));
 
 app.use('/static', express.static('static-content'));
 
