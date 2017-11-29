@@ -1,7 +1,6 @@
 const Hapi = require('hapi');
 const fs = require('fs');
 const Boom = require('boom');
-const Joi = require('joi');
 
 let plates = JSON.parse(outputFile());
 let cart = [];
