@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 function outputFile() {
-    return fs.readFileSync('../data/plates.json', 'utf8');
+    return fs.readFileSync(__dirname+ '/data/plates.json', 'utf8');
 }
 
 let plates = JSON.parse(outputFile());
