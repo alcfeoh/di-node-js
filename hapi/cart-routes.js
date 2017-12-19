@@ -14,7 +14,7 @@ module.exports = [{
     },
     handler: function (request, reply) {
         cart.push(request.params.id);
-        return reply(request.params.id + ' added to the cart');
+        return reply(JSON.stringify({ result: request.params.id + ' added to the cart'}));
     }
 },
 {
@@ -35,6 +35,6 @@ module.exports = [{
     },
     handler: function (request, reply) {
         cart.splice(cart.indexOf(request.params.id), 1);
-        return reply(request.params.id + ' removed from the cart');
+        return reply(JSON.stringify({ result: request.params.id + ' removed from cart'}));
     }
 }];
