@@ -1,0 +1,17 @@
+{
+  "name": "lp-store-server",
+  "version": "2.0.0",
+  "description": "License plate store server for tech training purposes",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Alain Chautard",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alcfeoh/di-node-js/tree/master/express"
+  }
+}
