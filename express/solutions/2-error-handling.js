@@ -1,39 +1,28 @@
-const Hapi = require('hapi');
-const fs = require('fs');
-const Boom = require('boom');
+const express = require('express');
+const app = express();
+const port = 8000;
 
-// Create a server with a host and port
-const server = new Hapi.Server({ debug: { request: ['error'] } });
-server.connection({ host: 'localhost', port: 8000 });
-
-// Add the routes
-server.route({
-    method: 'GET',  path:'/hello',
-    handler: function (request, reply) {
-        return reply('Hello Hapi World!');
-    }
-});
-
-server.route({
-    method: 'GET',  path:'/data',
-    handler: function (request, reply) {
-        return reply(outputFile());
-    }
-});
-
-server.route({
-    method: 'GET',  path:'/{p*}',
-    handler: function (request, reply) {
-        request.log(['error', 'bad_request'], request.url.pathname);
-        return reply(Boom.notFound('Nothing to see here'));
-    }
-});
-
-// Start the server
-server.start((err) => {
-    console.log('Server running at:', server.info.uri);
-});
-
-function outputFile() {
-    return fs.readFileSync('../data/plates.json', 'utf8');
+function logErrors(err ,req, res, next){
+    console.error(err);
+    res.status(404).send('Nothing to see here');
 }
+
+app.get('/', (request, resp) => {
+    resp.send('<h1>Hello Express World!</h1>')
+});
+
+// We can serve static content too!
+app.use('/data', express.static('../data', {index: 'plates.json'}));
+
+app.get('*', (request, resp, next) => {
+    throw new Error("Unknown URL: "+ request.originalUrl);
+});
+
+// Middleware for error handling
+app.use(logErrors);
+
+app.listen(port, (err) => {
+    console.log(`server listening on ${port}`)
+});
+
+
