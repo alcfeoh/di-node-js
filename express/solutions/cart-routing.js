@@ -9,7 +9,7 @@ router.put('/:id',(req, resp) => {
     if (idExists){
         cart.push(req.params.id);
         console.log(cart);
-        return resp.send(req.params.id + ' added to the cart');
+        return resp.send({ result:req.params.id + ' added to the cart'});
     } else {
         throw new Error("Unknown ID: "+ req.params.id);
     }
@@ -24,7 +24,7 @@ router.delete('/:id',(req, resp) => {
     let idExists = plates.find(plate => plate._id == req.params.id);
     if (idExists){
         cart.splice(cart.indexOf(req.params.id), 1);
-        return resp.send(req.params.id + ' removed from the cart');
+        return resp.send({ result:req.params.id + ' removed from the cart'});
     } else {
         throw new Error("Unknown ID: "+ req.params.id);
     }

@@ -1,9 +1,13 @@
 const express = require('express');
 const cartRoutes = require('./cart-routing');
 const data = require('./data-models');
+var cors = require('cors');
 
 const app = express();
 const port = 8000;
+
+// Enabling CORS
+app.use(cors());
 
 let plates = data.plates;
 
