@@ -1,22 +1,23 @@
+rollDice = () => Math.ceil(Math.random() * 6);
 
+randomWait = () => Math.ceil(Math.random() * 5000);
 
-rollDice = () => Math.ceil(Math.random() * 7);
+createDice = () => new Promise((resolve) => {
+    setTimeout(() => resolve(rollDice()) , randomWait());
+});
 
-randomWait = () => Math.floor(Math.random() * 500);
+let dice1 = createDice();
+let dice2 = createDice();
+let dice3 = createDice();
 
-function throwDice() {
-    return new Promise( (resolve, reject) => {
-        setTimeout(() => resolve(rollDice()), randomWait());
-    });
-}
+dice1.then(d1 => console.log('Dice 1', d1));
+dice2.then(d1 => console.log('Dice 2', d1));
+dice3.then(d1 => console.log('Dice 3', d1));
 
-let dice1 = throwDice();
-let dice2 = throwDice();
-let dice3 = throwDice();
-
-Promise.all([dice1, dice2, dice3]).then(res => console.log('Result: ', res));
-
-dice1.then(d1 => console.log('Dice 1: ', d1));
-dice2.then(d2 => console.log('Dice 2: ', d2));
-dice3.then(d3 => console.log('Dice 3: ', d3));
+Promise.all([dice1, dice2, dice3])
+    .then( ([d1,d2,d3]) => console.log(`
+            Dice 1: ${d1} --- 
+            Dice 2: ${d2} --- 
+            Dice 3: ${d3} --- 
+         `));
 
