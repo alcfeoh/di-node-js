@@ -4,7 +4,7 @@ let filePath = process.argv[2];
 
 if (filePath) {
     console.log('Listening for file updates on: ', filePath);
-    fs.watch(filePath, {encoding: 'buffer'}, (eventType, filename) => {
+    fs.watchFile(filePath, {encoding: 'buffer'}, (eventType, filename) => {
         console.log('The file has changed');
     });
 
