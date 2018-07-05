@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "boom": "^5.2.0",
-    "hapi": "^16.6.2",
+    "hapi": "^16.6.3",
     "inert": "^4.2.1"
   },
   "devDependencies": {},
