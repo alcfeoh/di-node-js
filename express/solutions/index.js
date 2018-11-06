@@ -18,6 +18,7 @@ function logErrors(err ,req, res, next){
 
 app.use('/data', (req, resp) => resp.send(plates));
 app.use('/states', (req, resp) => resp.send(data.states));
+app.use('/rates', (req, resp) => resp.send({'EUR': 1.14, 'GBP': 1.31}));
 app.use('/checkout', (req, resp) => resp.send({status: 'OK'}));
 app.use('/login', (req, resp) => resp.send({token: '1abcd21atsampletoken21'}));
 
