@@ -5,7 +5,7 @@
   "main": "solutions/index.js",
   "dependencies": {
     "cors": "^2.8.4",
-    "express": "^4.16.3"
+    "express": "^5.2.1"
   },
   "devDependencies": {},
   "scripts": {},
